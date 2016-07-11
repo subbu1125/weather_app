@@ -10,14 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var weather_list_component_1 = require('./weather/weather-list.component');
+var weather_search_component_1 = require('./weather/weather-search.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <header>\n  <h2>Weather Application</h2>\n  </header>\n  <weather-list></weather-list>\n  ",
-            directives: [weather_list_component_1.WeatherListComponent]
+            template: "\n  <header>\n  <h2>Weather Application</h2>\n  </header>\n  <weather-search></weather-search>\n  <weather-list></weather-list>\n  ",
+            directives: [weather_list_component_1.WeatherListComponent, weather_search_component_1.WeatherSearchComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -10,12 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var weather_item_component_1 = require("./weather-item.component");
-var weather_data_1 = require('./weather.data');
+var weather_service_1 = require('./weather.service');
 var WeatherListComponent = (function () {
-    function WeatherListComponent() {
+    function WeatherListComponent(_weatherService) {
+        this._weatherService = _weatherService;
     }
     WeatherListComponent.prototype.ngOnInit = function () {
-        this.weatherItems = weather_data_1.WEATHER_ITEMS;
+        this.weatherItems = this._weatherService.getWeatherItems();
     };
     WeatherListComponent = __decorate([
         core_1.Component({
@@ -23,7 +24,7 @@ var WeatherListComponent = (function () {
             template: "\n<section class=\"weather-list\">\n  <weather-item *ngFor=\"#weatherItem of weatherItems\" [item]=\"weatherItem\"></weather-item>\n</section>\n",
             directives: [weather_item_component_1.weatherItemComponent]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [weather_service_1.WeatherService])
     ], WeatherListComponent);
     return WeatherListComponent;
 }());
